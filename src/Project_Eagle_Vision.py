@@ -71,5 +71,5 @@ if __name__ == '__main__':
         st.image(resized_image)
         print(prediction)
         severities = ['no', 'a slight', 'a mild', 'a moderate', 'a severe']
-        rating = min(max(int(prediction), 0), 4)
+        rating = min(max(int(prediction + 0.5), 0), 4)
         st.title("Your score is {:.2f}. You have {} tremor!".format(prediction, severities[rating]))
