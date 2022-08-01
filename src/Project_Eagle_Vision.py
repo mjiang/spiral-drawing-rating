@@ -70,5 +70,7 @@ if __name__ == '__main__':
         resized_image = img.resize((336, 336))
         st.image(resized_image)
         print(prediction)
-        st.title("Your tremor rating is {:.1f}".format(prediction))
+        severities = ['none', 'slight', 'mild', 'moderate', 'severe']
+        rating = min(max(int(prediction), 0), 4)
+        st.title("Your tremor rating is {}: {:.1f}".format(severities[rating], prediction))
 
