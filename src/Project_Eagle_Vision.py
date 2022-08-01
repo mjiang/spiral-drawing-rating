@@ -68,7 +68,7 @@ if __name__ == '__main__':
 
         st.title("Here is the drawing you've uploaded")
         resized_image = img.resize((336, 336))
-        st.image(resized_image)
+        st.image(resized_image, width=256)
         print(prediction)
         severities = ['no', 'a slight', 'a mild', 'a moderate', 'a severe']
         rating = min(max(int(prediction + 0.5), 0), 4)
