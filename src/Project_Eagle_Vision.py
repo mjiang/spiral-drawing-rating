@@ -56,9 +56,9 @@ if __name__ == '__main__':
         Tremor is the most common movement disorder. The assessment of tremor is in general carried out in a very subjective way. The Archimedean spiral drawing is a standardized test designed to capture the frequency, amplitude and direction of a tremor for a quantitative assessment. To perform this test, grab a pen and a piece of paper, and draw the following Archimedean spiral. After that, take a picture of your spiral drawing and upload it, to assess your tremor severity.
         """
     st.write(instructions)
-    st.image("https://upload.wikimedia.org/wikipedia/commons/c/c5/Archimedean_spiral.svg")
+    st.image("https://fasikl.s3.us-west-2.amazonaws.com/videos/spiral.png")
  
-    file = st.file_uploader('Upload Your Drawing')
+    file = st.file_uploader('Upload your spiral drawing:')
 
     if file:  # if user uploaded file
         img = Image.open(file).convert('RGB')
@@ -66,11 +66,10 @@ if __name__ == '__main__':
         prediction = predict(img, model)
         prediction = float(prediction.numpy())
 
-        st.title("Here is the image you've selected")
+        st.title("Here is the drawing you've uploaded")
         resized_image = img.resize((336, 336))
         st.image(resized_image)
         print(prediction)
-        severities = ['none', 'slight', 'mild', 'moderate', 'severe']
-        rating = min(max(int(prediction), 0), 4)
-        st.title("Your tremor rating is {}: {:.1f}".format(severities[rating], prediction))
-
+        severities = ['no', 'a slight', 'a mild', 'a moderate', 'a severe']
+        rating = min(max(int(prediction + 0.5), 0), 4)
+        st.title("Your score is {:.2f}. You have {} tremor!".format(severities[rating], prediction))
