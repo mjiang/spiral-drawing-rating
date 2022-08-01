@@ -53,7 +53,7 @@ if __name__ == '__main__':
     model = load_model()
     st.title('Welcome To Spiral Drawing Test!')
     instructions = """
-        Tremor is the most common movement disorder. The assessment of tremor is in general carried out in a very subjective way. The Archimedean spiral drawing is a standardized test designed to capture the frequency, amplitude and direction of a tremor for a quantitative assessment. To perform this test, grab a pen and a piece of paper, and draw the following Archimedean spiral. After that, take a picture of your spiral drawing and upload it, to assess your tremor severity.
+        Tremor is the most common movement disorder. The assessment of tremor is in general carried out in a very subjective way. The Archimedean spiral drawing is a standardized test designed to capture the frequency, amplitude and direction of a tremor for a quantitative assessment. To perform this test, grab a pen and a piece of paper, and draw the following Archimedean spiral. After that, take a photo of your drawing and upload it. Our AI will evaluate your tremor severity.
         """
     st.write(instructions)
     st.image("https://fasikl.s3.us-west-2.amazonaws.com/videos/spiral.png")
