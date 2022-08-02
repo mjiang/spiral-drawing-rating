@@ -74,11 +74,11 @@ if __name__ == '__main__':
         prediction = min(max(prediction, 0), 4)
         st.title("Your score is {:.2f}. You have {} tremor!".format(prediction, severities[int(prediction + 0.5)]))
         instructions = """
-            Tremor severities are categorized into five levels:
-            < 0.5: none,
-            0.5 - 1.5: slight, 
-            1.5 - 2.5: mild,
-            2.5 - 3.5: moderate,
-            > 3.5: severe.
+             Tremor severities are categorized into five levels:
+                * &lt; 0.5: none,
+                * 0.5 - 1.5: slight,
+                * 1.5 - 2.5: mild,
+                * 2.5 - 3.5: moderate,
+                * &gt; 3.5: severe.
             """
         st.write(instructions)
