@@ -71,7 +71,7 @@ if __name__ == '__main__':
         st.image(resized_image)
         print(prediction)
         severities = ['no', 'a slight', 'a mild', 'a moderate', 'a severe']
-        prediction = min(max(prediction, 0), 4）
+        prediction = min(max(prediction, 0), 4)
         st.title("Your score is {:.2f}. You have {} tremor!".format(prediction, severities[int(prediction + 0.5)]))
         instructions = """
             Tremor severities are categorized into five levels:
